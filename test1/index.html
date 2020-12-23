@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang = "ru">
+    <head>
+        <meta charset="utf-8">
+        <title>test</title>
+    </head>
+
+    <body>
+       
+
+
+        <script type="text/javascript">
+
+            var words = [       //запас слов из которых выберетс€ одно
+                "hello",
+                "programm",
+                "travel",
+                "guitar",
+                "promoute",
+                "clever",
+                "sunny",
+                "bread"
+            ];
+
+            var word = words[Math.floor(Math.random() * words.length)];  //выбираем случайное слово
+
+            var answerArray = [];   //создем пустой массив, дл€ угадываемого слова
+                for (var i = 0; i < word.length; i++) {
+                answerArray[i] = "_";
+            }
+
+            var remainingLetters = word.length; //«аписываем сколько осталось угадать
+
+            while (remainingLetters > 0) {     //¬рем€ работы игры
+                alert(answerArray.join(" "));   //ѕоказать результат 
+                var guess = prompt("Enter letter");  //—прашиваем букву помещаем в переменную guess
+                if (guess === null) {  //≈сли в prompt нажать отмена, в переменную guess вернетс€ null
+                    break;             //“огда игра будет завершена
+                }
+                else if (guess.length !== 1) {    //ѕроверка на то, чтоб длинна была в точности одна буква
+                    alert("Only one letter please");
+                }
+                else {
+                    for (var j = 0; j < word.length; j++) {
+                        if (word[j] === guess) {
+                            answerArray[j] = guess;
+                            remainingLetters--;
+                        }
+                    }
+                }
+            }
+
+            alert(answerArray.join(" "));
+            alert("Nice your word is " + word);
+
+
+
+
+        </script>
+    </body>
+</html>
