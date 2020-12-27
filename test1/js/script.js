@@ -36,10 +36,15 @@ while (remainingLetters > 0 && remainingSteps > 0) {     //Время работ
     }
     else {
         for (var j = 0; j < word.length; j++) {
-            if (word[j] === guess.toLowerCase()) {
-                answerArray[j] = guess.toLowerCase();
-                remainingLetters--;
-                remainingSteps++;
+            if (word[j] === guess.toLowerCase()) {  //Условия для уже вписаной буквы
+                if (answerArray[j] === "_") {
+                    answerArray[j] = guess.toLowerCase();
+                    remainingLetters--;
+                    remainingSteps++;
+                }
+                else {
+                    remainingSteps++;
+                }
             }
         }
         remainingSteps--;
