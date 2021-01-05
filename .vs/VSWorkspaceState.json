@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\test1",
-    "\\test1\\js"
+    "\\test1\\js",
+    "\\test3",
+    "\\test3\\js"
   ],
-  "SelectedNode": "\\test1\\js",
+  "SelectedNode": "\\test3\\js\\scripts.js",
   "PreviewInSolutionExplorer": false
 }
